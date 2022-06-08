@@ -19,6 +19,7 @@ import service.UpdateServiceImpl;
 import service.ViewServiceImpl;
 import service.WriterService;
 import service.WriterServiceImpl;
+import util.JavaUtil;
 
 /**
  * Servlet implementation class WriterController
@@ -91,6 +92,9 @@ public class UpdateController extends HttpServlet {
 			File delFile = new File(realFolder, multi.getParameter("realSaveFileName"));
 			delFile.delete();
 		}
+		
+		//썸네일만들기
+		JavaUtil.createThumbnail(realFolder+"/"+realSaveFileName, 256);
 		
 		BoardVO vo = new BoardVO();
 		vo.setNum(Integer.parseInt(num));

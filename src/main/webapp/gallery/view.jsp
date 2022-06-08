@@ -25,13 +25,19 @@
 <body>
 <div class="container">
 	<table class="table">
+		<colgroup>
+			<col width="10%">
+			<col>
+		</colgroup>
 		<tr>
 			<th>제목</th>
 			<td><%=vo.getTitle() %></td>
 		</tr>
 		<tr>
 			<th>내용</th>
-			<td><%=vo.getContent() %></td>
+			<td><%=vo.getContent() %><br/>
+			<img alt="첨부이미지" src="upload/<%=vo.getRealSaveFileName()%>" style="max-width: 100%;">
+			</td>
 		</tr>
 		<tr>
 			<th>첨부파일</th>

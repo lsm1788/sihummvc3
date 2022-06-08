@@ -11,7 +11,7 @@ public class ViewMapper {
 		String url = "jdbc:mysql://localhost:3306/smart?characterEncoding=UTF-8&serverTimezone=Asia/Seoul";
 		String user = "root";
 		String password = "smart";
-		String sql = " SELECT * FROM board WHERE num = ? ";
+		String sql = " SELECT * FROM gallery WHERE num = ? ";
 		Connection conn = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;

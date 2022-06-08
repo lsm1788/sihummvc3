@@ -42,8 +42,12 @@ public class DeleteController extends HttpServlet {
 		String realFolder = context.getRealPath(saveFolder);
 		
 		File delFile = new File(realFolder, realSaveFileName);
+		File delFile2 = new File(realFolder,"sm_"+realSaveFileName);
 		if(delFile.exists()) {
 			delFile.delete();
+		}
+		if(delFile2.exists()) {
+			delFile2.delete();
 		}
 		//글 삭제
 		DeleteServiceImpl service = new DeleteServiceImpl(); 

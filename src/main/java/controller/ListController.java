@@ -41,7 +41,7 @@ public class ListController extends HttpServlet {
 		
 		//페이징
 		int pageCount = 5;
-		int pageRow = 3;//페이지당 보여줄 게시물 갯수
+		int pageRow = 20;//페이지당 보여줄 게시물 갯수
 		int pageNum = 1;
 		int pagingNum = 5;
 		

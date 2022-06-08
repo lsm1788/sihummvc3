@@ -80,34 +80,25 @@ if(pageNum > lastPage || pageNum < 1){
 				</form>
 			</div>
 		</div>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>글번호</th>
-					<th>제목</th>
-					<th>작성자</th>
-					<th>작성일</th>
-				</tr>
-			</thead>
-			<tbody>
+		<div class="row" style="clear: both; padding: 20px 0px;">
 				<%
 				Iterator<BoardVO> it = list.iterator();
 				while (it.hasNext()) {
 					BoardVO vo = it.next();
 				%>
-				<tr>
-					<td><%=vo.getNum()%></td>
-					<td><a href="view?num=<%=vo.getNum()%>"><%=vo.getTitle()%></a>
-						<%=vo.getRealFileName()!=null?"<img src='clip.png' style='width:25px;'/> ":""%>
-					</td>
-					<td><%=vo.getWriter()%></td>
-					<td><%=vo.getWriterDate()%></td>
-				</tr>
+				<div style="float:left; padding: 5px 15px;">
+					<a href="view?num=<%=vo.getNum()%>">
+						<div style="height:170px; overflow: hidden;">
+						<%-- <%=(vo.getRealSaveFileName()!=null && !"".equals(vo.getRealSaveFileName()))?"<img src='upload/sm_"+vo.getRealSaveFileName()+"' style='width:255.99px; ' />":"<img src='noimg.jpg' style='width:255.99px; ' />" %> --%>
+						<img src="<%=(vo.getRealSaveFileName()!=null && !"".equals(vo.getRealSaveFileName()))?"upload/sm_"+vo.getRealSaveFileName():"noimg.jpg"%>" style='width:255.99px; ' />
+						</div>
+						<div><%=vo.getTitle() %></div>
+					</a>
+				</div>
 				<%
 				}
 				%>
-			</tbody>
-		</table>
+		</div>
 		<nav style="text-align: center;">
 			<ul class="pagination">
 				<%

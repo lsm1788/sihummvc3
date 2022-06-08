@@ -59,7 +59,7 @@ public class WriterController extends HttpServlet {
 			targetDir.mkdir();
 		}
 
-		int maxSize = 10*1024*1024;//10Mb
+		int maxSize = 20*1024*1024;//20Mb
 		String encType = "UTF-8";
 		
 		//넘어온 값을 변수에 저장
